@@ -13,7 +13,8 @@ class PlaidAuthenticator extends Component {
       clientName,
       webhook,
       style,
-      token
+      token,
+      user
     } = this.props;
 
     let uri = `https://cdn.plaid.com/link/v2/stable/link.html?key=${
@@ -36,6 +37,7 @@ class PlaidAuthenticator extends Component {
           'clientName',
           'webhook',
           'token',
+          'user',
           'ref'
         ])}
         ref={this.props.plaidRef}
@@ -77,6 +79,7 @@ PlaidAuthenticator.propTypes = {
   product: PropTypes.string.isRequired,
   clientName: PropTypes.string,
   webhook: PropTypes.string,
+  user: PropTypes.object,
   plaidRef: PropTypes.func
 };
 
